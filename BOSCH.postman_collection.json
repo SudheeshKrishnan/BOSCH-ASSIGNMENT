@@ -1,0 +1,373 @@
+{
+	"info": {
+		"_postman_id": "be6593f8-a15a-4940-9fbe-b778e9f8ccde",
+		"name": "BOSCH",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": " http://localhost:8080/create/employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"sudheesh\",\r\n    \"gender\":\"Male\",\r\n    \"dateOfHire\":\"2018-03-29T13:34:00.000\",\r\n    \"city\":\"BLR\",\r\n    \"line1\":\"A1\",\r\n    \"line2\":\"A2\",\r\n    \"band\":\"L1\",\r\n    \"skill\":\"java\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/employee-service/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee-service",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " http://localhost:8080/employee-service/employee/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/employee-service/employee/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee-service",
+						"employee",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " http://localhost:8080/sendMessage/complexType",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mode\": 0,\r\n    \"uid\": \"uid:0\",\r\n    \"orderType\": \"sell\",\r\n    \"orderStatus\": \"open\",\r\n    \"quantity\": 1 ,\r\n    \"symbol\" : \"s:0\",\r\n    \"holdingID\": 1007\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/sendMessage/complexType",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sendMessage",
+						"complexType"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8086/api/message",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"sudheesh\",\r\n    \"description\":\"car\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8086/api/message",
+					"host": [
+						"localhost"
+					],
+					"port": "8086",
+					"path": [
+						"api",
+						"message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:2443/portfolios/uid%3A0/orders?mode=0",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"orderType\": \"buy\",\r\n  \"quantity\": 10.0,\r\n  \"orderStatus\": \"open\",\r\n  \"symbol\" :\"s:0\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:2443/portfolios/uid%3A0/orders?mode=0",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "2443",
+					"path": [
+						"portfolios",
+						"uid%3A0",
+						"orders"
+					],
+					"query": [
+						{
+							"key": "mode",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " http://localhost:8080/employee-service/remove/2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "fr",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdWRoZWVzaCIsImV4cCI6MTYwNzc3MTM3MCwiaWF0IjoxNjA3MTY2NTcwfQ.CwqzbFb1SlMVOLkBaC5qJq37dR0MpreQTzbBvS7VPy-BWOIgtlDWEmyfvJZ_v6zxzjx8Gelkip5QTiDifGVWyw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/employee-service/remove/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee-service",
+						"remove",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " http://localhost:8080/create/employee",
+			"request": {
+				"auth": {
+					"type": "apikey"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "http://localhost:4200",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdWRoZWVzaCIsImV4cCI6MTYwNzc3MTM3MCwiaWF0IjoxNjA3MTY2NTcwfQ.CwqzbFb1SlMVOLkBaC5qJq37dR0MpreQTzbBvS7VPy-BWOIgtlDWEmyfvJZ_v6zxzjx8Gelkip5QTiDifGVWyw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"suuu\",\r\n    \"gender\":\"Male\",\r\n    \"dateOfHire\":\"2018-03-29T13:34:00.000\",\r\n    \"city\":\"BLR\",\r\n    \"line1\":\"A1\",\r\n    \"line2\":\"A2\",\r\n    \"band\":\"L1\",\r\n    \"skill\":\"java\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/employee-service/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee-service",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/employee-service/payroll",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdWRoZWVzaCIsImV4cCI6MTYwNzc3MTM3MCwiaWF0IjoxNjA3MTY2NTcwfQ.CwqzbFb1SlMVOLkBaC5qJq37dR0MpreQTzbBvS7VPy-BWOIgtlDWEmyfvJZ_v6zxzjx8Gelkip5QTiDifGVWyw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"basic\":10004.77,\r\n\"variable\":9999.00,\r\n\"grade\":\"L2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/employee-service/payroll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee-service",
+						"payroll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/employee-service/authenticate",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "http://localhost:4200",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Sudheesh\",\r\n    \"password\":\"dummy\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/employee-service/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee-service",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " http://localhost:8080/create/employee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdWRoZWVzaCIsImV4cCI6MTYwNzc3MzgxMywiaWF0IjoxNjA3MTY5MDEzfQ.1BXd9-zYTynUEzey-kiPh4Cy9ZxLNM3OdFncrh08bB2OhdnANwa75eluS3Ca0f88EgTx4s86D19deu-SCjIaUQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"sudheesh\",\r\n    \"gender\":\"Male\",\r\n    \"dateOfHire\":\"2018-03-29T13:34:00.000\",\r\n    \"city\":\"BLR\",\r\n    \"line1\":\"A1\",\r\n    \"line2\":\"A2\",\r\n    \"band\":\"L1\",\r\n    \"skill\":\"java\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/employee-service/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee-service",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/employee-service/project-employee/1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTdWRoZWVzaCIsImV4cCI6MTYwNzc3Mzk1MiwiaWF0IjoxNjA3MTY5MTUyfQ.fumZ0-ZhImGqYiVuD5aOcTCupJUnuFW-RPKINp0sP9Lt2OlWI4Is7ikMQ-RfPAMyXVJVTmKBk6XSVDlcdX24hA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/employee-service/project-employee/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee-service",
+						"project-employee",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
