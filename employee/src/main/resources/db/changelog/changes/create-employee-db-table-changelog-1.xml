@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	<!-- employee -->
+	<changeSet author="sudheesh" id="1">
+		<createTable tableName="employee">
+			<column autoIncrement="true" name="id" type="bigint">
+				<constraints primaryKey="true" />
+			</column>
+			<column name="name" type="VARCHAR(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="date_joined" type="timestamp" />
+			<column name="line1" type="VARCHAR(255)" />
+			<column name="line2" type="VARCHAR(255)" />
+			<column name="city" type="VARCHAR(255)" />
+			<column name="gender" type="VARCHAR(255)" />
+			<column name="skill" type="VARCHAR(255)" />
+			<column name="status" type="VARCHAR(255)" />
+			<column name="department_id" type="bigint" />
+
+			<column name="payroll_id" type="bigint" />
+
+		</createTable>
+		<rollback>
+			<dropTable tableName="employee" />
+		</rollback>
+	</changeSet>
+
+
+	<!-- department -->
+	<changeSet author="sudheesh" id="2">
+		<createTable tableName="department">
+			<column autoIncrement="true" name="id" type="bigint">
+				<constraints primaryKey="true" />
+			</column>
+			<column name="dept_head" type="VARCHAR(255)" />
+			<column name="dept_name" type="VARCHAR(255)" />
+		</createTable>
+		<rollback>
+			<dropTable tableName="department" />
+		</rollback>
+	</changeSet>
+
+
+	<!-- payroll -->
+
+
+	<changeSet author="sudheesh" id="3">
+		<createTable tableName="payroll">
+			<column autoIncrement="true" name="id" type="bigint">
+				<constraints primaryKey="true" />
+			</column>
+			<column name="grade" type="VARCHAR(255)" />
+			<column name="basic" type="float">
+				<constraints nullable="false" />
+			</column>
+			<column name="variable" type="float">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+		<rollback>
+			<dropTable tableName="payroll" />
+		</rollback>
+	</changeSet>
+
+
+
+
+	<!-- project -->
+	<changeSet author="sudheesh" id="4">
+		<createTable tableName="project">
+			<column autoIncrement="true" name="id" type="bigint">
+				<constraints primaryKey="true" />
+			</column>
+			<column name="project_location" type="VARCHAR(255)" />
+			<column name="project_name" type="VARCHAR(255)" />
+		</createTable>
+		<rollback>
+			<dropTable tableName="project" />
+		</rollback>
+	</changeSet>
+
+
+	<!-- employee_project -->
+
+	<changeSet author="sudheesh" id="5">
+		<createTable tableName="employee_project">
+
+			<column name="emp_id" type="bigint">
+				<constraints nullable="false" />
+			</column>
+			<column name="project_id" type="bigint">
+				<constraints nullable="false" />
+			</column>
+
+		</createTable>
+		<rollback>
+			<dropTable tableName="employee_project" />
+		</rollback>
+	</changeSet>
+
+	<!-- -FK -->
+
+
+	<changeSet author="liquibase-docs"
+		id="addForeignKeyConstraint-emp-payroll">
+		<addForeignKeyConstraint
+			baseColumnNames="payroll_id" baseTableName="employee"
+
+			constraintName="fk_emp_payroll" referencedColumnNames="id"
+
+			referencedTableName="payroll" />
+	</changeSet>
+
+	<changeSet author="liquibase-docs"
+		id="addForeignKeyConstraint-emp-department">
+		<addForeignKeyConstraint
+			baseColumnNames="department_id" baseTableName="employee"
+
+			constraintName="fk_emp_department" referencedColumnNames="id"
+
+			referencedTableName="department" />
+	</changeSet>
+
+	<changeSet author="liquibase-docs"
+		id="addForeignKeyConstraint-emp-project-1">
+		<addForeignKeyConstraint
+			baseColumnNames="project_id" baseTableName="employee_project"
+
+			constraintName="fk_emp_project_1" referencedColumnNames="id"
+
+			referencedTableName="project" />
+	</changeSet>
+
+	<changeSet author="liquibase-docs"
+		id="addForeignKeyConstraint-emp-project-2">
+		<addForeignKeyConstraint
+			baseColumnNames="emp_id" baseTableName="employee_project"
+
+			constraintName="fk_emp_project_2" referencedColumnNames="id"
+
+			referencedTableName="employee" />
+	</changeSet>
+
+
+
+</databaseChangeLog>
